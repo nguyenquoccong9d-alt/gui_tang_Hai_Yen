@@ -1,0 +1,41 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:"Trebuchet MS",Arial,sans-serif}
+body{background:#ffdce9;color:#7c4960;cursor:pointer}
+.scene{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:scale(1.04);
+  transition:opacity .9s ease,transform 1s ease;
+  overflow:hidden;
+}
+.scene.active{opacity:1;pointer-events:auto;transform:scale(1)}
+.bg1{background:radial-gradient(circle at 50% 25%,#fff7fb 0,#ffdce9 45%,#f8b9d0 100%)}
+.bg2{background:linear-gradient(#ffe8f1,#ffc9dd)}
+.bg3{background:radial-gradient(circle at 50% 25%,#fff8fc,#f7c4d8 65%,#eaa8c6)}
+.bg4{background:linear-gradient(#fff0f6,#ffc9dd)}
+.card{
+ width:min(88vw,720px);padding:38px 28px;text-align:center;
+ background:rgba(255,255,255,.62);border:2px solid rgba(255,255,255,.8);
+ border-radius:34px;box-shadow:0 18px 55px rgba(139,76,106,.18);
+ backdrop-filter:blur(8px)
+}
+h1{font-size:clamp(30px,6vw,58px);margin:0 0 14px;color:#c85d88}
+h2{font-size:clamp(25px,5vw,42px);margin:8px;color:#b95b80}
+p{font-size:clamp(17px,3vw,23px);line-height:1.6;margin:12px auto;max-width:590px}
+.tap{display:inline-block;margin-top:22px;padding:12px 22px;border-radius:999px;background:#f49bbb;color:white;font-weight:700;box-shadow:0 8px 20px #d77c9b55}
+.moon{font-size:92px;filter:drop-shadow(0 8px 15px #d48ba155);animation:float 3s ease-in-out infinite}
+.lanterns{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-around}
+.lantern{font-size:52px;animation:sway 2.4s ease-in-out infinite}
+.stars{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;color:white;font-size:20px;animation:twinkle 1.8s infinite}
+.bear{font-size:120px;animation:float 2.7s ease-in-out infinite}
+.lion{font-size:150px;animation:liondance .75s ease-in-out infinite alternate;filter:drop-shadow(0 10px 15px #b75c7b44)}
+.confetti{position:absolute;inset:0;pointer-events:none}
+.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#f59fbd;animation:fall 4s linear infinite}
+.final{font-size:clamp(21px,4vw,31px);color:#a64f75}
+.signature{font-size:clamp(19px,3vw,25px);margin-top:25px;color:#c45d87;font-weight:700}
+.music{position:fixed;right:16px;top:14px;z-index:20;background:#fff8fbcc;border:1px solid #fff;padding:9px 13px;border-radius:20px;color:#ad5a7d;font-size:13px}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes sway{50%{transform:rotate(8deg)}}
+@keyframes twinkle{50%{opacity:.2;transform:scale(.7)}}
+@keyframes liondance{to{transform:translateY(-10px) rotate(4deg)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
